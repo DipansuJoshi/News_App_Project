@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Best News App</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        min-height: 100vh;
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .navbar {
+        display: flex;
+        overflow: hidden;
+        height: 12vh;
+        width: 100%;
+        /* border: 10px solid red; */
+    }
+
+    .navbar .img {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #000;
+    }
+
+    .img .my {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .my #main {
+        color: red;
+        font-size: 3.5rem;
+        font-weight: 900;
+    }
+
+    .my #news {
+        font-size: 2.2rem;
+        color: #000;
+        font-weight: 600;
+    }
+
+    .img img {
+        height: 118px;
+    }
+
+    .navbar .links {
+        display: flex;
+        align-items: center;
+        border: 3px solid #000;
+        justify-content: center;
+        width: 45%;
+    }
+
+    .links ul {
+        display: flex;
+    }
+
+    ul li {
+        font-size: 1.7rem;
+        list-style: none;
+        text-transform: uppercase;
+        margin-left: 53px;
+    }
+
+    li a {
+        text-decoration: none;
+        padding: 7px 22px;
+        border-radius: 14px;
+        border: 2px solid transparent;
+        color: #fff;
+        background-color: #000;
+    }
+
+    li a:hover {
+        background-color: transparent;
+        color: #000;
+        border: 2px solid #000;
+        cursor: pointer;
+    }
+
+    .navbar .search {
+        width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #000;
+    }
+
+    .search input {
+        font-size: 1.6rem;
+        outline: none;
+        padding: 9px 10px;
+        border-radius: 14px;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .search input:hover {
+        background-color: rgba(128, 128, 128, 0.26);
+    }
+
+    .search .btn {
+        margin-left: 16px;
+        outline: none;
+        padding: 8px 21px;
+        font-size: 1.7rem;
+        border-radius: 12px;
+        background-color: rgb(236, 13, 121);
+        border: 2px solid transparent;
+        color: #fff;
+    }
+
+    .search .btn:hover {
+        color: rgb(236, 13, 121);
+        background-color: transparent;
+        border: 2px solid #000;
+        cursor: pointer;
+    }
+
+    .container .body {
+        height: 88vh;
+        width: 100%;
+        background-color: white;
+        overflow: hidden;
+        display: none;
+    }
+
+    .body .first {
+        height: 48vh;
+        width: 29%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: -12px -9px 4px rgb(128 128 128 / 53%), 11px 14px 2px rgb(128 128 128 / 16%);
+        border-radius: 24px;
+        top: 50px;
+        left: 34px;
+    }
+
+    .first h1 {
+        text-align: center;
+        padding: 4px 2px;
+    }
+
+    .first p {
+        text-align: center;
+        padding: 5px 2px;
+    }
+
+    body .second {
+        height: 50vh;
+        width: 29%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: -12px -9px 4px rgb(128 128 128 / 53%), 11px 14px 2px rgb(128 128 128 / 16%);
+        border-radius: 24px;
+        top: -272px;
+        left: 624px;
+    }
+
+    .second h1 {
+        text-align: center;
+        padding: 4px 2px;
+    }
+
+    .second p {
+        text-align: center;
+        padding: 5px 2px;
+    }
+
+    .third {
+        height: 20vh;
+        width: 29%;
+        position: relative;
+        box-shadow: -12px -9px 4px rgb(128 128 128 / 53%), 11px 14px 2px rgb(128 128 128 / 16%);
+        border-radius: 24px;
+        top: -763px;
+        left: 1189px;
+    }
+
+    .third h1 {
+        text-align: center;
+        padding: 6px 2px;
+    }
+
+    .third p {
+        text-align: center;
+        padding: 3px 2px;
+    }
+
+    .fourth {
+        height: 28vh;
+        width: 23%;
+        position: relative;
+        top: -661px;
+        display: flex;
+        left: 1204px;
+        border: 5px solid #000;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    #image1 img {
+        height: 202px;
+    }
+
+    #image2 img {
+        height: 202px;
+    }
+
+    #image3 img {
+        height: 199px;
+    }
+
+    body .line {
+        height: 30px;
+        width: 100%;
+        background-color: #000;
+        position: relative;
+        top: -635px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="img">
+                <img src="newsLogo.png" alt="My Image Of ABP News">
+                <div class="my"><span id="main">ABP</span><span id="news">News</span></div>
+            </div>
+            <div class="links">
+                <ul>
+                    <li class="items" id="item-1"><a href="#">Home</a></li>
+                    <li class="items" id="item-2"><a href="#">about</a></li>
+                    <li class="items" id="item-3"><a href="#">contact us</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" id="myText" placeholder="Enter Your Place Or A Keyword"><button class="btn"
+                    id="myBtn">Submit</button>
+            </div>
+        </div>
+        <div class="body" id="myBody">
+            <div class="first">
+                <div class="image" id="image1">
+                    <img src="newsLogo.png" alt="Image Of Logo">
+                </div>
+                <h1 id="first_head">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                <p id="para1">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam quae sint itaque tempora cumque
+                    saepe facilis, autem rem similique, quas odit nam?
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+            <div class="second">
+                <h1 id="second_head">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                <p id="para2">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam quae sint itaque tempora cumque
+                    saepe facilis, autem rem similique, quas odit nam?
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <div class="image" id="image2">
+                    <img src="newsLogo.png" alt="Image Of Logo">
+                </div>
+            </div>
+            <div class="third">
+                <h1 id="third_head">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                <p id="para3">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam quae sint itaque tempora cumque
+                    saepe facilis, autem rem similique, quas odit nam?
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+            <div class="fourth" id="image3">
+                <img src="try.jpeg" alt="Image Of Try Image">
+            </div>
+            <br><br>
+            <div class="line"></div>
+        </div>
+    </div>
+    <script>
+        let myText = document.getElementById("myText");
+        let myBtn = document.getElementById("myBtn");
+        let myBody = document.getElementById("myBody");
+
+        let first_head = document.getElementById("first_head");
+        let second_head = document.getElementById("second_head");
+        let third_head = document.getElementById("third_head");
+
+        let para1 = document.getElementById("para1");
+        let para2 = document.getElementById("para2");
+        let para3 = document.getElementById("para3");
+
+        let image1 = document.getElementById("image1");
+        let image2 = document.getElementById("image2");
+        let image3 = document.getElementById("image3");
+
+        const getNews = async () => {
+            let val = myText.value;
+            const api = `https://newsapi.org/v2/everything?q=${val}&from=2022-11-23&sortBy=publishedAt&apiKey=6d761df830f94bceb6a6255986adb007`;
+
+            let data = await fetch(api)
+            let realData = await data.json();
+
+            console.log(realData.articles[0].description);
+
+            first_head.innerText = realData.articles[0].title;
+            second_head.innerText = realData.articles[1].title;
+            third_head.innerText = realData.articles[2].title;
+
+            para1.innerText = realData.articles[0].description;
+            para2.innerText = realData.articles[1].description;
+            para3.innerText = realData.articles[2].description;
+
+            console.log(realData.articles[0].urlToImage);
+
+            image1.innerHTML = `<img src="${realData.articles[0].urlToImage}" alt="Image Of Try Image">`;
+            image2.innerHTML = `<img src="${realData.articles[1].urlToImage}" alt="Image Of Try Image">`;
+            image3.innerHTML = `<img src="${realData.articles[2].urlToImage}" alt="Image Of Try Image">`;
+
+            myBody.style.display = "block";
+        }
+
+        myBtn.addEventListener("click", getNews);
+    </script>
+</body>
+
+</html>
